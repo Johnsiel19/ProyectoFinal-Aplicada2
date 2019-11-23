@@ -13,6 +13,7 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            CargarProveedores();
             if (!Page.IsPostBack)
             {
                 Limpiar();
@@ -40,6 +41,23 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
 
         }
 
+        private void CargarProveedores()
+        {
+            if (!Page.IsPostBack)
+            {
+                RepositorioBase<Proveedores> db = new RepositorioBase<Proveedores>();
+
+
+                ProveedorIdTextbox.DataSource = db.GetList(t => true);
+                ProveedorIdTextbox.DataValueField = "ProveedorId";
+                ProveedorIdTextbox.DataTextField = "Nombre";
+                ProveedorIdTextbox.DataBind();
+
+                ViewState["Productos"] = new Productos();
+            }
+
+        }
+
         private void Limpiar()
         {
             ProductoIdTextBox.Text = "0";
@@ -48,7 +66,7 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
             CostoTextBox.Text = string.Empty;
             ItbisTextBox.Text = string.Empty;
             ExistenciaTextBox.Text = string.Empty;
-            ProveedorIdTextbox.Text = string.Empty;
+            ProveedorIdTextbox.Text = null;
             fechaTextBox.Text = DateTime.Now.ToString("dd/MM/yyyy");
            
 
@@ -82,6 +100,7 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
             ProveedorIdTextbox.SelectedValue = Productos.ProveedorId.ToString();
             fechaTextBox.Text = Productos.Fecha.ToString();
             ItbisTextBox.Text = Productos.ProductoItbis.ToString();
+            ExistenciaTextBox.Text = ProductoIdTextBox.Text.ToString();
            
 
 

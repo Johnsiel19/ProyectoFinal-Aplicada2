@@ -58,7 +58,7 @@
                  <div class="form-group">
                 <label for="Existencialabel" class="col-md-3 control-label input-sm" style="font-size: small">Existencia</label>
                 <div class="col-md-1 ">
-                    <asp:TextBox ID="ExistenciaTextBox" runat="server" placeholder="0" class="form-control input-sm" Style="font-size: small" TextMode="Number"></asp:TextBox>
+                    <asp:TextBox ID="ExistenciaTextBox" ReadOnly="true" runat="server" placeholder="0" class="form-control input-sm" Style="font-size: small" TextMode="Number"></asp:TextBox>
                 </div>
                         </div>
           <%--Costo--%>

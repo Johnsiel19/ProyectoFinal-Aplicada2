@@ -19,7 +19,7 @@
                             </div>
                             <asp:RegularExpressionValidator ID="ValidaID" runat="server" ErrorMessage='Campo "ID" solo acepta numeros' ControlToValidate="EntradaIdTextBox" ValidationExpression="^[0-9]*" Text="*" ForeColor="Red" Display="Dynamic" ToolTip="Producto no valido" ValidationGroup="Guardar"></asp:RegularExpressionValidator>
                             <div class="col-md-1 ">
-                                <asp:Button ID="BuscarButton" runat="server" Text="Buscar" class="btn btn-primary" />
+                                <asp:Button ID="BuscarButton" runat="server" Text="Buscar" class="btn btn-primary" OnClick="BuscarButton_Click" />
                             </div>
                         </div>
 
@@ -62,9 +62,9 @@
                 <div class="panel">
                     <div class="text-center">
                         <div class="form-group">
-                            <asp:Button ID="NuevoButton" runat="server" Text="Nuevo" class="btn btn-primary" />
-                            <asp:Button ID="GuardarButton" runat="server" Text="Guardar" class="btn btn-success" ValidationGroup="Guardar" />
-                            <asp:Button ID="EliminarButton" runat="server" Text="Eliminar" class="btn btn-danger" />
+                            <asp:Button ID="NuevoButton" runat="server" Text="Nuevo" class="btn btn-primary" OnClick="NuevoButton_Click" />
+                            <asp:Button ID="GuardarButton" runat="server" Text="Guardar" class="btn btn-success" ValidationGroup="Guardar" OnClick="GuardarButton_Click" />
+                            <asp:Button ID="EliminarButton" runat="server" Text="Eliminar" class="btn btn-danger" OnClick="EliminarButton_Click" />
                         </div>
                     </div>
                 </div>

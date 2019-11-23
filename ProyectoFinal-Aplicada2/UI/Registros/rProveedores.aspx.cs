@@ -40,6 +40,7 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
 
 
         }
+   
 
         private void Limpiar()
         {

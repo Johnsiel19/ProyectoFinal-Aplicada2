@@ -15,7 +15,7 @@ namespace Entidades
         public int ClienteId { get; set; }
         public int UsuarioId { get; set; }
         public int VentaId { get; set; }
-        public double MontoPagado { get; set; }
+        public decimal MontoPagado { get; set; }
         public DateTime Fecha { get; set; }
         public string Observacion { get; set; }
 

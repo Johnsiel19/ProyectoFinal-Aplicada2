@@ -20,7 +20,7 @@ namespace Entidades
         public string Celular { get; set; }
         public string Direccion { get; set; }
         public int UsuarioId { get; set; }
-        public double Balance { get; set; }
+        public decimal Balance { get; set; }
         public DateTime Fecha { get; set; }
 
         public Clientes()
@@ -33,7 +33,7 @@ namespace Entidades
             Celular = string.Empty;
             Direccion = string.Empty;
             UsuarioId = 0;
-            Balance = 0.00;
+            Balance = 0;
             Fecha = DateTime.Now;
         }
     }

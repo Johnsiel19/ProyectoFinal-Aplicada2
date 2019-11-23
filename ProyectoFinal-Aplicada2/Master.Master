@@ -111,6 +111,8 @@
                                   <li><a href="/UI/Registros/rEntradas.aspx">Entradas</a></li>
                                   <li><a href="/UI/Registros/rProveedores.aspx">Proveedores</a></li>
                                   <li><a href="/UI/Registros/rUsuarios.aspx">Usuarios</a></li>
+                                 <li><a href="/UI/Registros/rClientes.aspx">Clientes</a></li>
+                                 <li><a href="/UI/Registros/rVentas.aspx">Ventas</a></li>
                          
                             </ul>
                         </li>

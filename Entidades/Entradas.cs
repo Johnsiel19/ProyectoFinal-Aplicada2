@@ -13,7 +13,7 @@ namespace Entidades
         [Key]
         public int EntradaId { get; set; }
         public int ProductoId { get; set; }
-        public double Entrada { get; set; }
+        public decimal Entrada { get; set; }
         public int UsuarioId { get; set; }
         public DateTime Fecha { get; set; }
 

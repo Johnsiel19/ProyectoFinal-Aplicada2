@@ -14,25 +14,29 @@ namespace Entidades
         public int VentaDetalleId { get; set; }
         public int VentaId { get; set; }
         public int ProductoId { get; set; }
-        public double Cantidad { get; set; }
-        public double Precio { get; set; }
-        public double Itbis { get; set; }
-        public double Importe { get; set; }
+        public string Descripcion { get; set; }
+        public decimal Cantidad { get; set; }
+        public decimal Precio { get; set; }
+        public decimal Itbis { get; set; }
+        public decimal Importe { get; set; }
 
-
-        public VentasDetalle(int ventaDetalleId, int ventaId, int productoId, int cantidad, double precio)
+        public VentasDetalle(int ventaDetalleId, int ventaId, int productoId, string descripcion, decimal cantidad, decimal precio, decimal itbis, decimal importe)
         {
             VentaDetalleId = ventaDetalleId;
             VentaId = ventaId;
             ProductoId = productoId;
+            Descripcion = descripcion;
             Cantidad = cantidad;
             Precio = precio;
+            Itbis = itbis;
+            Importe = importe;
         }
 
         public VentasDetalle()
         {
             VentaDetalleId = 0;
             VentaId = 0;
+            Descripcion = string.Empty;
             ProductoId = 0;
             Cantidad = 0;
             Precio = 0;

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
+    [Serializable]
     public class Ventas
     {
         [Key]
@@ -14,13 +15,13 @@ namespace Entidades
         public int ClienteId { get; set; }
         public int UsuarioId { get; set; }
         public string Modo { get; set; }
-        public double SubTotal { get; set; }
-        public double Itbis { get; set; }
-        public double Total { get; set; }
-        public double Balance { get; set; }
+        public decimal SubTotal { get; set; }
+        public decimal Itbis { get; set; }
+        public decimal Total { get; set; }
+        public decimal Balance { get; set; }
         public DateTime Fecha { get; set; }
 
-        public virtual List<VentasDetalle> Productos { get; set; }
+        public virtual List<VentasDetalle> Detalle { get; set; }
 
 
         public Ventas()
@@ -34,7 +35,7 @@ namespace Entidades
             Total = 0;
             Balance = 0;
             Fecha = DateTime.Now;
-            Productos = new List<VentasDetalle>();
+            Detalle = new List<VentasDetalle>();
 
         }
     }

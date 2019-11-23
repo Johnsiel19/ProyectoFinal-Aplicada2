@@ -50,7 +50,7 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
             TelefonoTextBox.Text = string.Empty;
             DireccionTextBox.Text = string.Empty;
             fechaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
-            CedulaTextBox.Text = string.Empty;
+           CelularTextBox.Text = string.Empty;
                                  
 
         }
