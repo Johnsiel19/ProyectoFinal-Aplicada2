@@ -41,9 +41,9 @@
                 <div class="col-md-5">
                     <asp:TextBox ID="NombreTextBox" runat="server"  onkeypress="return isLetterKey(event)" class="form-control input-sm" Style="font-size: small"></asp:TextBox>
                 </div>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="El campo &quot;Nombres&quot; esta vacio" ControlToValidate="NombreTextBox" ForeColor="Red" Display="Dynamic" ToolTip="Campo Descripcion es obligatorio" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" MaxLength="100" runat="server" ErrorMessage="El campo &quot;Nombres&quot; esta vacio" ControlToValidate="NombreTextBox" ForeColor="Red" Display="Dynamic" ToolTip="Campo Descripcion es obligatorio" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
             </div>
-'
+
 
                     <%--Cedula--%>
             <div class="form-group">
@@ -51,9 +51,9 @@
                 <div class="col-md-4">
                     <asp:TextBox ID="CedulaTextBox" runat="server"  class="form-control input-sm" Style="font-size: small"></asp:TextBox>
                 </div>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="El campo &quot;Nombres&quot; esta vacio" ControlToValidate="CedulaTextBox" ForeColor="Red" Display="Dynamic" ToolTip="Campo Descripcion es obligatorio" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" MaxLength="100" runat="server" ErrorMessage="El campo &quot;Nombres&quot; esta vacio" ControlToValidate="CedulaTextBox" ForeColor="Red" Display="Dynamic" ToolTip="Campo Descripcion es obligatorio" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
             </div>
-'
+
        
 
 
@@ -63,16 +63,16 @@
                 <div class="col-md-4">
                     <asp:TextBox ID="CorreoTextBox" runat="server"  class="form-control input-sm" Style="font-size: small"></asp:TextBox>
                 </div>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="El campo &quot;Nombres&quot; esta vacio" ControlToValidate="CorreoTextBox" ForeColor="Red" Display="Dynamic" ToolTip="Campo Descripcion es obligatorio" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" MaxLength="100" runat="server" ErrorMessage="El campo &quot;Nombres&quot; esta vacio" ControlToValidate="CorreoTextBox" ForeColor="Red" Display="Dynamic" ToolTip="Campo Descripcion es obligatorio" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
             </div>
-'
+
                   <%--Telefono--%>
             <div class="form-group">
                 <label for="TelefonoLabel" class="col-md-3 control-label input-sm" style="font-size: small" >Telefono</label>
                 <div class="col-md-4">
                     <asp:TextBox ID="TelefonoTextBox" runat="server"  class="form-control input-sm" Style="font-size: small"></asp:TextBox>
                 </div>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="El campo &quot;Nombres&quot; esta vacio" ControlToValidate="TelefonoTextBox" ForeColor="Red" Display="Dynamic" ToolTip="Campo Descripcion es obligatorio" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" MaxLength="100" runat="server" ErrorMessage="El campo &quot;Nombres&quot; esta vacio" ControlToValidate="TelefonoTextBox" ForeColor="Red" Display="Dynamic" ToolTip="Campo Descripcion es obligatorio" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
             </div>
 
                   <%--Celular--%>
@@ -81,7 +81,7 @@
                 <div class="col-md-4">
                     <asp:TextBox ID="CelularTextBox" runat="server"   class="form-control input-sm" Style="font-size: small"></asp:TextBox>
                 </div>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="El campo &quot;Nombres&quot; esta vacio" ControlToValidate="CelularTextBox" ForeColor="Red" Display="Dynamic" ToolTip="Campo Descripcion es obligatorio" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" MaxLength="100" runat="server" ErrorMessage="El campo &quot;Nombres&quot; esta vacio" ControlToValidate="CelularTextBox" ForeColor="Red" Display="Dynamic" ToolTip="Campo Descripcion es obligatorio" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
             </div>
                    <%--BALANCE--%>
             <div class="form-group">

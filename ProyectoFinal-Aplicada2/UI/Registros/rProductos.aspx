@@ -27,7 +27,7 @@
               <%--FEcha--%>
 
                 <div class="form-group">
-                    <label for="fechalabel" class="col-md-3 control-label input-sm">Fecha: </label>
+                    <label for="fechalabel" class="col-md-3 control-label input-sm">Fecha </label>
                         <div class="col-md-3">
                             <asp:TextBox CssClass="form-control" ID="fechaTextBox" TextMode="Date" runat="server"></asp:TextBox>
                         </div>
@@ -38,7 +38,7 @@
                 <div class="col-md-6">
                     <asp:TextBox ID="DescripcionTextBox" runat="server"  class="form-control input-sm" Style="font-size: small"></asp:TextBox>
                 </div>
-                <asp:RequiredFieldValidator ID="Valida" runat="server" ErrorMessage="El campo &quot;Nombres&quot; esta vacio" ControlToValidate="DescripcionTextBox" ForeColor="Red" Display="Dynamic" ToolTip="Campo Descripcion es obligatorio" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="Valida" MaxLength="100" runat="server" ErrorMessage="El campo &quot;Nombres&quot; esta vacio" ControlToValidate="DescripcionTextBox" ForeColor="Red" Display="Dynamic" ToolTip="Campo Descripcion es obligatorio" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
             </div>
 
         
@@ -65,10 +65,9 @@
              <div class="form-group">
                 <label for="Costolabel" class="col-md-3 control-label input-sm" style="font-size: small">Costo</label>
                 <div class="col-md-2">
-                    <asp:TextBox ID="CostoTextBox"  runat="server" placeholder="0" class="form-control input-sm" Style="font-size: small" TextMode="Number"></asp:TextBox>
+                    <asp:TextBox  class="form-control" ID="CostoTextBox" Text="0" runat="server" TextMode="Number"></asp:TextBox>
                 </div>
-                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage='Campo "ID" solo acepta numeros' ControlToValidate="CostoTextBox" ValidationExpression="^[0-9]*" Text="*" ForeColor="Red" Display="Dynamic" ToolTip="Entrada no valida" ValidationGroup="Guardar"></asp:RegularExpressionValidator>
-          
+               
             </div>
 
 
@@ -80,8 +79,7 @@
                 <div class="col-md-2">
                     <asp:TextBox ID="PrecioTextBox" runat="server" placeholder="0" class="form-control input-sm" Style="font-size: small" TextMode="Number"></asp:TextBox>
                 </div>
-                <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage='Campo "ID" solo acepta numeros' ControlToValidate="PrecioTextBox" ValidationExpression="^[0-9]*" Text="*" ForeColor="Red" Display="Dynamic" ToolTip="Entrada no valida" ValidationGroup="Guardar"></asp:RegularExpressionValidator>
-          
+               
             </div>
 
                  <%-- Itbis--%>
@@ -90,8 +88,7 @@
                 <div class="col-md-2">
                     <asp:TextBox ID="ItbisTextBox"  runat="server" placeholder="0" class="form-control input-sm" Style="font-size: small" TextMode="Number"></asp:TextBox>
                 </div>
-                <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage='Campo "ID" solo acepta numeros' ControlToValidate="ItbisTextBox" ValidationExpression="^[0-9]*" Text="*" ForeColor="Red" Display="Dynamic" ToolTip="Entrada no valida" ValidationGroup="Guardar"></asp:RegularExpressionValidator>
-          
+             
             </div>
                 
             </div>

@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="panel panel-primary">
-        <div class="panel-heading">Consulta de clientes</div>
+        <div class="panel-heading">Consulta de Clientes</div>
         <div class="panel-body">
 
             <%--Desde--%>

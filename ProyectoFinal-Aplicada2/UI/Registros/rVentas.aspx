@@ -101,7 +101,6 @@
 
                  <asp:BoundField DataField="VentaDetalleId" HeaderText="Id" /><asp:BoundField />
               
-                          <asp:BoundField DataField="VentaId" HeaderText="VentaId" /><asp:BoundField />
                         <asp:BoundField DataField="ProductoId" HeaderText="ProductoId" /><asp:BoundField />
                         <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" /><asp:BoundField />
                         <asp:BoundField DataField="Precio" HeaderText="Precio" /><asp:BoundField />

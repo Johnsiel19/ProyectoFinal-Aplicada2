@@ -103,15 +103,6 @@ namespace ProyectoFinal_Aplicada2.UI.Registros {
         protected global::System.Web.UI.WebControls.TextBox CostoTextBox;
         
         /// <summary>
-        /// RegularExpressionValidator1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
-        
-        /// <summary>
         /// PrecioTextBox control.
         /// </summary>
         /// <remarks>
@@ -121,15 +112,6 @@ namespace ProyectoFinal_Aplicada2.UI.Registros {
         protected global::System.Web.UI.WebControls.TextBox PrecioTextBox;
         
         /// <summary>
-        /// RegularExpressionValidator2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
-        
-        /// <summary>
         /// ItbisTextBox control.
         /// </summary>
         /// <remarks>
@@ -137,15 +119,6 @@ namespace ProyectoFinal_Aplicada2.UI.Registros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox ItbisTextBox;
-        
-        /// <summary>
-        /// RegularExpressionValidator3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator3;
         
         /// <summary>
         /// NuevoButton control.

@@ -25,7 +25,7 @@
                         <%--FEcha--%>
 
                         <div class="form-group">
-                            <label for="fechalabel" class="col-md-3 control-label input-sm">Fecha: </label>
+                            <label for="fechalabel" class="col-md-3 control-label input-sm">Fecha </label>
                             <div class="col-md-3">
                                 <asp:TextBox CssClass="form-control" ID="fechaTextBox" TextMode="Date" runat="server"></asp:TextBox>
                             </div>

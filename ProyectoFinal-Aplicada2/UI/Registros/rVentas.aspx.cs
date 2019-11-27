@@ -21,7 +21,7 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
 
             if (!Page.IsPostBack)
             {
-
+                Limpiar();
                 VentaIdTextBox.Text = "0";
               
                 ViewState["Ventas"] = new Ventas();
@@ -52,16 +52,16 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
         private void Limpiar()
         {
 
-            VentaIdTextBox.Text = "0.00";
+            VentaIdTextBox.Text = "0";
             ClienteIdDropDown.Text = null;
             ProductoDropDown.Text = null;
             CantidadTextBox.Text = "0.00";
              PrecioTextBox.Text = "0.00";
-          
+            FechaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
             SubTotalTextBox.Text = "0.00";
             ItbisTextBox.Text = "0.00";
             TotalTextBox.Text = "0.00";
-
+            
             Grid.DataSource = null;
             Grid.DataBind();
 
@@ -303,7 +303,7 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
 
             foreach (var item in venta.Detalle)
             {
-                Subtotal = Subtotal + item.Precio;
+                Subtotal = Subtotal + item.Importe;
                 Itbis = Itbis + item.Itbis;
                 total = total + (Itbis + Subtotal);
 
@@ -313,6 +313,7 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
 
             SubTotalTextBox.Text = Subtotal.ToString();
             ItbisTextBox.Text = Itbis.ToString();
+            ProductoDropDown.Text = null;
           
         }
 
@@ -334,7 +335,7 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
 
             foreach (var item in venta.Detalle)
             {
-                Subtotal = Subtotal + item.Precio;
+                Subtotal = Subtotal + item.Importe;
                 Itbis = Itbis + item.Itbis;
             }
 
@@ -349,14 +350,15 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
         {
             int id;
             RepositorioBase<Productos> db = new RepositorioBase<Productos>();
-            Productos analisis = new Productos();
+            Productos venta = new Productos();
             int.TryParse(ProductoDropDown.SelectedValue, out id);
 
             if(db.Buscar(id) != null)
             {
-                analisis = db.Buscar(id);
+                venta = db.Buscar(id);
 
-                PrecioTextBox.Text = Convert.ToString(analisis.Precio);
+                PrecioTextBox.Text = Convert.ToString(venta.Precio);
+                ExistencaTextBox.Text = Convert.ToString(venta.Existencia);
 
             }
 

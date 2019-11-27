@@ -3,6 +3,7 @@ using Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -79,7 +80,7 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
         private void LlenaCampo(Proveedores proveedor)
         {
             ProveedorIdTextBox.Text = proveedor.ProveedorId.ToString();
-            NombreTextBox.Text = proveedor.Nombre;
+            NombreTextBox.Text = proveedor.Nombre.Trim();
             TelefonoTextBox.Text = proveedor.Telefono;
             CelularTextBox.Text = proveedor.Celular;
             fechaTextBox.Text = proveedor.Fecha.ToString("yyyy-MM-dd");
@@ -98,19 +99,59 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
 
         }
 
+        private Boolean ValidarEmail(String email)
+        {
+            String expresion;
+            expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            if (Regex.IsMatch(email, expresion))
+            {
+                if (Regex.Replace(email, expresion, String.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
 
 
         private bool ValidarCampos()
         {
             bool paso = true;
-            if (NombreTextBox.Text == string.Empty)
+            if (CelularTextBox.Text.Length < 11)
             {
-                Utilitarios.Utils.ShowToastr(this.Page, "El campo descripcion no puede estar vacio", "Error", "error");
+                Utilitarios.Utils.ShowToastr(this.Page, "Celular invalido", "Error", "error");
+                paso = false;
 
-                NombreTextBox.Focus();
+            }
+            if (NombreTextBox.Text == "")
+            {
+                Utilitarios.Utils.ShowToastr(this.Page, "Llene el comapo nombre", "Error", "error");
+                paso = false;
+
+            }
+            if (TelefonoTextBox.Text.Length < 11)
+            {
+                Utilitarios.Utils.ShowToastr(this.Page, "Telefono Invalido", "Error", "error");
+                paso = false;
+
+            }
+
+
+            if (ValidarEmail(CorreoTextBox.Text) == false)
+            {
+                Utilitarios.Utils.ShowToastr(this.Page, "Correo Invalido", "Error", "error");
+
                 paso = false;
             }
 
+     
 
             return paso;
         }

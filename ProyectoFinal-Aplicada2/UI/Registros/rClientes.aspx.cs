@@ -42,7 +42,7 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
 
         private void Limpiar()
         {
-            ClienteIdTextBox.Text = string.Empty;
+            ClienteIdTextBox.Text = "0";
             NombreTextBox.Text = string.Empty;
             BalanceTextBox.Text = 0.ToString();
             CorreoTextBox.Text = string.Empty;

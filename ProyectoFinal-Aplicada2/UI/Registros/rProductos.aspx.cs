@@ -67,7 +67,7 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
             ItbisTextBox.Text = string.Empty;
             ExistenciaTextBox.Text =" 0.00";
             ProveedorIdTextbox.Text = null;
-            fechaTextBox.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            fechaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
            
 
 
@@ -77,7 +77,7 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
         {
             Productos producto = new Productos();
             producto.ProductoId = Convert.ToInt32(ProductoIdTextBox.Text);
-            producto.Descripcion = DescripcionTextBox.Text;
+            producto.Descripcion = DescripcionTextBox.Text.Trim();
             producto.Precio = Convert.ToDecimal(PrecioTextBox.Text);
             producto.Costo = Convert.ToDecimal(CostoTextBox.Text);
             producto.ProveedorId = Convert.ToInt32(ProveedorIdTextbox.SelectedValue);
@@ -118,26 +118,68 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
 
         private bool ValidarCampos()
         {
-            bool paso = true;
-            if (ProductoIdTextBox.Text == string.Empty)
-            {
-                Utilitarios.Utils.ShowToastr(this.Page, "El campo descripcion no puede estar vacio", "Error", "error");
+            RepositorioBase<Productos> db = new RepositorioBase<Productos>();
 
-                ProductoIdTextBox.Focus();
+            bool paso = true;
+
+         
+            if (DescripcionTextBox.Text == string.Empty)
+            {
+                Utilitarios.Utils.ShowToastr(this.Page, "Complete el compo Descripcion", "Error", "error");
+               
                 paso = false;
             }
 
+            if (ProveedorIdTextbox.Text == string.Empty)
+            {
+                Utilitarios.Utils.ShowToastr(this.Page, "Complete el compo proveedor", "Error", "error");
 
+                paso = false;
+            }
+
+ 
+            if (Convert.ToDecimal( ItbisTextBox.Text) < 0)
+            {
+                Utilitarios.Utils.ShowToastr(this.Page, "El ITBIS debe ser correcto", "Error", "error");
+
+                paso = false;
+
+            }
+
+            if (Convert.ToDecimal(ItbisTextBox.Text) > 18)
+            {
+                Utilitarios.Utils.ShowToastr(this.Page, "El ITBIS debe ser correcto. Menor a 19", "Error", "error");
+
+                paso = false;
+
+            }
+
+            if (Convert.ToDecimal( CostoTextBox.Text ) < 1)
+            {
+                Utilitarios.Utils.ShowToastr(this.Page, "El costo debe ser valido", "Error", "error");
+
+                paso = false;
+
+            }
+
+            if (Convert.ToDecimal(PrecioTextBox.Text)  < 1)
+            {
+                Utilitarios.Utils.ShowToastr(this.Page, "El precio debe ser valido", "Error", "error");
+
+                paso = false;
+
+            }
+            if (Convert.ToDecimal( PrecioTextBox.Text) < Convert.ToDecimal( CostoTextBox.Text))
+            {
+                Utilitarios.Utils.ShowToastr(this.Page, "El precio debe ser mayor al costo", "Error", "error");
+
+                paso = false;
+
+            }
             return paso;
         }
 
 
-
-
-
-
-
-     
 
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
