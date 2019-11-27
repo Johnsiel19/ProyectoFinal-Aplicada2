@@ -12,7 +12,7 @@
     <div class="panel-body">
         <div class="form-horizontal col-md-12" role="form">
 
-            <div class="container">
+         
               <div class="form-group">
                 <label for="ClienteIdlabel" class="col-md-3 control-label input-sm" style="font-size: small">ClienteId</label>
                 <div class="col-md-1 ">
@@ -107,7 +107,7 @@
                 
             </div>
             
-            </div>
+          
             <%--Botones--%>
             <div class="panel">
                 <div class="text-center">

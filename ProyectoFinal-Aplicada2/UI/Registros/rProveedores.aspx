@@ -11,7 +11,7 @@
     <div class="panel-body">
         <div class="form-horizontal col-md-12" role="form">
 
-            <div class="container">
+       
               <div class="form-group">
                 <label for="Proveedorlabel" class="col-md-3 control-label input-sm" style="font-size: small">ProveedorId</label>
                 <div class="col-md-1 ">
@@ -49,7 +49,6 @@
                 </div>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="El campo &quot;Nombres&quot; esta vacio" ControlToValidate="CorreoTextBox" ForeColor="Red" Display="Dynamic" ToolTip="Campo Descripcion es obligatorio" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
             </div>
-'
                   <%--Telefono--%>
             <div class="form-group">
                 <label for="TelefonoLabel" class="col-md-3 control-label input-sm" style="font-size: small" >Telefono</label>
@@ -72,7 +71,7 @@
                 
             </div>
             
-            </div>
+    
             <%--Botones--%>
             <div class="panel">
                 <div class="text-center">

@@ -11,7 +11,7 @@
     <div class="panel-body">
         <div class="form-horizontal col-md-12" role="form">
 
-            <div class="container">
+            
               <div class="form-group">
                 <label for="Cobroslabel" class="col-md-3 control-label input-sm" style="font-size: small">CobroId</label>
                 <div class="col-md-1 ">
@@ -64,7 +64,7 @@
 
 
                   <%-- Monto Pagado--%>
-                      <label for="MontoPagadolabel" class="col-md-2 control-label input-sm" style="font-size: small">Monto a Pagar</label>
+                      <label for="MontoPagadolabel" class="col-md-3 control-label input-sm" style="font-size: small">Monto a Pagar</label>
                 <div class="col-md-2">
                     <asp:TextBox ID="MontoPagadoTextBox" runat="server" placeholder="0" class="form-control input-sm" Style="font-size: small" TextMode="Number"></asp:TextBox>
                 </div>
@@ -72,7 +72,7 @@
           
 
                    <%-- Monto Pendiente--%>
-                <label for="MontoPendientelabel" class="col-md-3 control-label input-sm" style="font-size: small">Monto Pendiente</label>
+                <label for="MontoPendientelabel" class="col-md-2 control-label input-sm" style="font-size: small">Monto Pendiente</label>
                 <div class="col-md-2">
                     <asp:TextBox ID="MontoPendienteTextBox" runat="server" placeholder="0" class="form-control input-sm" Style="font-size: small" TextMode="Number"></asp:TextBox>
                 </div>
@@ -94,7 +94,7 @@
                 
             </div>
             
-            </div>
+            
             <%--Botones--%>
             <div class="panel">
                 <div class="text-center">

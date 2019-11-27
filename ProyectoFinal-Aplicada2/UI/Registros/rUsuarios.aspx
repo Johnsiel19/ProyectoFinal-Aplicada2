@@ -8,7 +8,7 @@
         <div class="panel panel-primary">
             <div class="panel-heading">Registro de Usuarios</div>
 
-            <div class="panel-body">
+    
                 <div class="form-horizontal col-md-12" role="form">
 
                     <div class="container">
@@ -99,7 +99,7 @@
 
                     </div>
 
-                </div>
+         
                 <%--Botones--%>
                 <div class="panel">
                     <div class="text-center">

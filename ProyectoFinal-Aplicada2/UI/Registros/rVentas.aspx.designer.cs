@@ -85,15 +85,6 @@ namespace ProyectoFinal_Aplicada2.UI.Registros {
         protected global::System.Web.UI.WebControls.DropDownList ProductoDropDown;
         
         /// <summary>
-        /// TiposModal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton TiposModal;
-        
-        /// <summary>
         /// CantidadTextBox control.
         /// </summary>
         /// <remarks>
@@ -110,6 +101,15 @@ namespace ProyectoFinal_Aplicada2.UI.Registros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+        
+        /// <summary>
+        /// ExistencaTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox ExistencaTextBox;
         
         /// <summary>
         /// PrecioTextBox control.

@@ -162,10 +162,8 @@ namespace BLL
 
                 Modifica(ventas, venta, db);
 
-                if (db.SaveChanges() > 0)
-                {
-                    paso = true;
-                }
+                db.SaveChanges();
+               
                 db.Dispose();
             }
             catch (Exception)

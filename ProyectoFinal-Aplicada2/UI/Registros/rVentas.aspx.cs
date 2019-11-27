@@ -127,7 +127,7 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
                 ClienteIdDropDown.DataTextField = "Nombre";
                 ClienteIdDropDown.DataBind();
 
-                ViewState["Produc"] = new Clientes();
+        
             }
 
         }
@@ -143,7 +143,7 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
                 ProductoDropDown.DataTextField = "Descripcion";
                 ProductoDropDown.DataBind();
 
-                ViewState["Productos"] = new Productos();
+              
             }
 
         }
@@ -298,15 +298,18 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
 
             decimal Subtotal = 0;
             decimal Itbis = 0;
+            decimal total = 0;
             
 
             foreach (var item in venta.Detalle)
             {
                 Subtotal = Subtotal + item.Precio;
                 Itbis = Itbis + item.Itbis;
+                total = total + (Itbis + Subtotal);
+
             }
 
-            TotalTextBox.Text = (Subtotal + Itbis).ToString();
+            TotalTextBox.Text = total.ToString();
 
             SubTotalTextBox.Text = Subtotal.ToString();
             ItbisTextBox.Text = Itbis.ToString();
@@ -349,10 +352,15 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
             Productos analisis = new Productos();
             int.TryParse(ProductoDropDown.SelectedValue, out id);
 
+            if(db.Buscar(id) != null)
+            {
+                analisis = db.Buscar(id);
 
-            analisis = db.Buscar(id);
+                PrecioTextBox.Text = Convert.ToString(analisis.Precio);
 
-            PrecioTextBox.Text = Convert.ToString(analisis.Precio);
+            }
+
+            
        
 
         }

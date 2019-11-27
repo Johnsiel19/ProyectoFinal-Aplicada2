@@ -42,12 +42,12 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
 
         private void Limpiar()
         {
-            UsuarioIdTextBox.Text = string.Empty;
+            UsuarioIdTextBox.Text = "0";
             NombreTextBox.Text = string.Empty;
 
             CorreoTextBox.Text = string.Empty;
 
-            UsuarioIdTextBox.Text = string.Empty;
+        
             ClaveTextBox.Text = string.Empty;
             fechaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
          

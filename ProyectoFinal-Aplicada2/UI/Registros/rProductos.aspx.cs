@@ -65,7 +65,7 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
             PrecioTextBox.Text = 0.ToString();
             CostoTextBox.Text = string.Empty;
             ItbisTextBox.Text = string.Empty;
-            ExistenciaTextBox.Text = string.Empty;
+            ExistenciaTextBox.Text =" 0.00";
             ProveedorIdTextbox.Text = null;
             fechaTextBox.Text = DateTime.Now.ToString("dd/MM/yyyy");
            
@@ -80,7 +80,7 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
             producto.Descripcion = DescripcionTextBox.Text;
             producto.Precio = Convert.ToDecimal(PrecioTextBox.Text);
             producto.Costo = Convert.ToDecimal(CostoTextBox.Text);
-            producto.ProveedorId = Convert.ToInt32(1);
+            producto.ProveedorId = Convert.ToInt32(ProveedorIdTextbox.SelectedValue);
             producto.ProductoItbis = Convert.ToInt32(ItbisTextBox.Text);
             producto.Fecha = Convert.ToDateTime(DateTime.Now);
             producto.UsuarioId = 0;
@@ -100,7 +100,7 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
             ProveedorIdTextbox.SelectedValue = Productos.ProveedorId.ToString();
             fechaTextBox.Text = Productos.Fecha.ToString();
             ItbisTextBox.Text = Productos.ProductoItbis.ToString();
-            ExistenciaTextBox.Text = ProductoIdTextBox.Text.ToString();
+            ExistenciaTextBox.Text = Productos.Existencia.ToString();
            
 
 

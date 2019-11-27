@@ -12,7 +12,7 @@
     <div class="panel-body">
         <div class="form-horizontal col-md-12" role="form">
 
-            <div class="container">
+         
               <div class="form-group">
                 <label for="ProductoIdlabel" class="col-md-3 control-label input-sm" style="font-size: small">ProductoId</label>
                 <div class="col-md-1 ">
@@ -57,7 +57,7 @@
                <%-- Existencia--%>
                  <div class="form-group">
                 <label for="Existencialabel" class="col-md-3 control-label input-sm" style="font-size: small">Existencia</label>
-                <div class="col-md-1 ">
+                <div class="col-md-2 ">
                     <asp:TextBox ID="ExistenciaTextBox" ReadOnly="true" runat="server" placeholder="0" class="form-control input-sm" Style="font-size: small" TextMode="Number"></asp:TextBox>
                 </div>
                         </div>
@@ -96,7 +96,7 @@
                 
             </div>
             
-            </div>
+            
             <%--Botones--%>
             <div class="panel">
                 <div class="text-center">
