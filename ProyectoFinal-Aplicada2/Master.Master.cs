@@ -12,6 +12,7 @@ namespace ProyectoFinal_Aplicada2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Page.UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None;
 
         }
 

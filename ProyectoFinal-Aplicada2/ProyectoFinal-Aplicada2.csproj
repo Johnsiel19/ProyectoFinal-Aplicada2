@@ -97,6 +97,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Informacion.aspx" />
     <Content Include="LogIn.aspx" />
+    <Content Include="rLogIn.aspx" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -165,6 +166,13 @@
     <Compile Include="Master.Master.designer.cs">
       <DependentUpon>Master.Master</DependentUpon>
     </Compile>
+    <Compile Include="Master2.Master.cs">
+      <DependentUpon>Master2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master2.Master.designer.cs">
+      <DependentUpon>Master2.Master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProyectoFinalDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -175,6 +183,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ProyectoFinalDBDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="rLogIn.aspx.cs">
+      <DependentUpon>rLogIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rLogIn.aspx.designer.cs">
+      <DependentUpon>rLogIn.aspx</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="UI\Consultas\cClientes.aspx.cs">
@@ -321,10 +336,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Master.Master" />
+    <Content Include="Master2.Master" />
     <None Include="packages.config" />
     <Content Include="ProyectoFinalDBDataSet.xsc">
       <DependentUpon>ProyectoFinalDBDataSet.xsd</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\PoyectoFinal2Johnsiel - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\PoyectoFinal2Johnsiel - ReadOnly - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\PoyectoFinal2Johnsiel - Web Deploy.pubxml" />
     <None Include="ProyectoFinalDBDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>ProyectoFinalDBDataSet.Designer.cs</LastGenOutput>
@@ -354,7 +373,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">

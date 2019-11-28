@@ -61,14 +61,14 @@
                             <div class="col-md-1">
                                 <asp:TextBox ID="CantidadTextBox" runat="server" placeholder="0" class="form-control input-sm" Style="font-size: small" TextMode="Number"></asp:TextBox>
                             </div>
-                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage='Campo "ID" solo acepta numeros' ControlToValidate="CantidadTextBox" ValidationExpression="^[0-9]*" Text="*" ForeColor="Red" Display="Dynamic" ></asp:RegularExpressionValidator>
+                          
 
 
                             <%--Existencia--%>
                  
                             <label for="Existencialabel" class="col-md-1 control-label input-sm" style="font-size: small">Existencia</label>
                             <div class="col-md-1">
-                                <asp:TextBox ID="ExistencaTextBox" runat="server" placeholder="0" class="form-control input-sm" Style="font-size: small" TextMode="Number"></asp:TextBox>
+                                <asp:TextBox ID="ExistencaTextBox" ReadOnly="true" runat="server" placeholder="0" class="form-control input-sm" Style="font-size: small" TextMode="Number"></asp:TextBox>
                             </div>
                          
 

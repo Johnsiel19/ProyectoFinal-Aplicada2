@@ -124,10 +124,12 @@ namespace BLL
         public static bool Modificar(Ventas ventas)
         {
             bool paso = false;
+         
             Contexto db = new Contexto();
-            RepositorioBase<Clientes> client = new RepositorioBase<Clientes>();
+
+
             RepositorioBase<Ventas> vent = new RepositorioBase<Ventas>();
-            RepositorioBase<Productos> prod = new RepositorioBase<Productos>();
+
             try
             {
                 var venta = vent.Buscar(ventas.VentaId);
@@ -136,6 +138,7 @@ namespace BLL
                 {
                     ModificarBien(ventas, venta);
                 }
+                var anterior = vent.Buscar(venta.VentaId);
 
                 if (ventas != null)
                 {
@@ -157,14 +160,15 @@ namespace BLL
                         db.Entry(item).State = estado;
                     }
 
-                    db.Entry(ventas).State = EntityState.Modified;
+                
+                    db.Entry(venta).State = EntityState.Modified;
+                    if (db.SaveChanges() > 0)
+                    {
+                        paso = true;
+
+                    }
+
                 }
-
-                Modifica(ventas, venta, db);
-
-                db.SaveChanges();
-               
-                db.Dispose();
             }
             catch (Exception)
             {

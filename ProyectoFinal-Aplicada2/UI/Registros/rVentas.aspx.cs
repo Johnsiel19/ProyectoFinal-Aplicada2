@@ -54,7 +54,7 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
             ClienteIdDropDown.Text = null;
             ProductoDropDown.Text = null;
             CantidadTextBox.Text = "0.00";
-             PrecioTextBox.Text = "0.00";
+           
             FechaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
             SubTotalTextBox.Text = "0.00";
             ItbisTextBox.Text = "0.00";
@@ -276,11 +276,7 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
 
 
             }
-            if (ExisteEnGrid() == true)
-            {
-                Utilitarios.Utils.ShowToastr(this.Page, "Ese producto ya existe en el grid", "error", "error");
-                paso = true;
-            }
+          
             if (Convert.ToDecimal( CantidadTextBox.Text) < 1)
             {
                 Utilitarios.Utils.ShowToastr(this.Page, "", "error", "error");
@@ -361,8 +357,9 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
         {
             RepositorioBase<Productos> db = new RepositorioBase<Productos>();
             Productos producto = new Productos();
-       
 
+            if (ValidarGrid() == true)
+                return;
            
             producto = db.Buscar(Convert.ToInt32(ProductoDropDown.Text));
 
@@ -406,7 +403,7 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
 
             SubTotalTextBox.Text = Subtotal.ToString();
             ItbisTextBox.Text = Itbis.ToString();
-            ProductoDropDown.Text = null;
+              CantidadTextBox.Text = "0";
           
         }
 

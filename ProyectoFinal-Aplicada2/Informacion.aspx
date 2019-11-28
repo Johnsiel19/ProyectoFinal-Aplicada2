@@ -5,6 +5,6 @@
 
         <div class="jumbotron text-center">
            <h1>Johnsiel Castaños Hernández</h1>
-  <p>Este es mi Proyecto Final de Aplicada II</p>
+  <p>Este es mi Proyecto Final de Aplicada II </p>
             </div>
 </asp:Content>

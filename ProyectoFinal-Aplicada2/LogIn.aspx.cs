@@ -53,5 +53,12 @@ namespace ProyectoFinal_Aplicada2
        
 
         }
+
+        protected void CrearButton_Click(object sender, EventArgs e)
+        {
+            Usuarios Usuario = new Usuarios();
+            FormsAuthentication.RedirectFromLoginPage(Usuario.Usuario, true);
+            Response.Redirect(@"\rLogIn.aspx");
+        }
     }
 }
