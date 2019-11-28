@@ -131,8 +131,8 @@
                 <div class="text-center">
                         <div class="form-group">
                            
-                            <asp:Button ID="GuardarButton" runat="server" Text="Guardar" class="btn btn-success" ValidationGroup="Guardar" OnClick="GuardarButton_Click"  />
-                             <asp:Button ID="CrearButton" runat="server" Text="Guardar" class="btn btn-primary" ValidationGroup="Crear" O="" OnClick="CrearButton_Click" />
+                            <asp:Button ID="GuardarButton" runat="server" Text="Iniciar" class="btn btn-success" ValidationGroup="Guardar" OnClick="GuardarButton_Click"  />
+                             <asp:Button ID="CrearButton" runat="server" Text="Crear" class="btn btn-primary" ValidationGroup="Crear" O="" OnClick="CrearButton_Click" />
                            
                         </div>
                     </div>

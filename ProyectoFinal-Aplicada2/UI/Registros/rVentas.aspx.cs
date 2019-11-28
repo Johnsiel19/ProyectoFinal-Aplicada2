@@ -1,4 +1,5 @@
 ﻿using BLL;
+using CrystalDecisions.Web.Services;
 using Entidades;
 using System;
 using System.Collections.Generic;
@@ -367,7 +368,19 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
 
             venta = (Ventas)ViewState["Ventas"];
 
+       
+            Productos A = new RepositorioBase<Productos>().Buscar(Utilitarios.Utils.ToInt(ProductoDropDown.SelectedValue));
 
+            int idd = Utilitarios.Utils.ToInt(ProductoDropDown.SelectedValue);
+
+            foreach (var item in venta.Detalle.ToList())
+            {
+                if (idd == item.ProductoId)
+                {
+                    Utilitarios.Utils.ShowToastr(this.Page, "No se puede agregar el producto mas de una vez", "Error", "error");
+                    return;
+                }
+            }
             decimal itbis = (producto.ProductoItbis * Convert.ToDecimal( 0.01));
           
             decimal monto = Convert.ToDecimal( PrecioTextBox.Text )* Convert.ToDecimal(CantidadTextBox.Text);

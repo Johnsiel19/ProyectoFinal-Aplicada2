@@ -385,12 +385,22 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="UI\Reportes\ListadoClientes.rdlc" />
-    <EmbeddedResource Include="UI\Reportes\ListadoEntradas.rdlc" />
-    <EmbeddedResource Include="UI\Reportes\ListadoProductos.rdlc" />
-    <EmbeddedResource Include="UI\Reportes\ListadoProveedores.rdlc" />
-    <EmbeddedResource Include="UI\Reportes\ListadoUsuarios.rdlc" />
-    <EmbeddedResource Include="UI\Reportes\ListadoVentas.rdlc" />
+    <Content Include="UI\Reportes\ListadoClientes.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UI\Reportes\ListadoEntradas.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UI\Reportes\ListadoProductos.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UI\Reportes\ListadoProveedores.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UI\Reportes\ListadoUsuarios.rdlc" />
+    <Compile Include="UI\Reportes\ListadoVentas.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

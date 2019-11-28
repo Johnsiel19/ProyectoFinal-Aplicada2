@@ -22,7 +22,7 @@ namespace ProyectoFinal_Aplicada2
    
         protected void GuardarButton_Click(object sender, EventArgs e)
         {
-            if( ClaveTextBox.Text == "admin" && UsuarioTextBox.Text == "admin")
+            if( ClaveTextBox.Text == "admin1" && UsuarioTextBox.Text == "admin1")
             {
                 Usuarios Usuario = new Usuarios();
                 FormsAuthentication.RedirectFromLoginPage(Usuario.Usuario, true);
