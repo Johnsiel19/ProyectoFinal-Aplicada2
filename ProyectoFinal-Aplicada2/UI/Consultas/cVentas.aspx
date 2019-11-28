@@ -6,7 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="panel panel-primary">
-        <div class="panel-heading">Consulta de Clientes</div>
+        <div class="panel-heading">Consulta de Ventas</div>
         <div class="panel-body">
 
             <%--Desde--%>
@@ -34,6 +34,10 @@
                     <asp:DropDownList ID="FiltroDropDown" runat="server" CssClass="form-control input-sm">
                         <asp:ListItem>Todo</asp:ListItem>
                         <asp:ListItem>ID</asp:ListItem>
+                        <asp:ListItem>ClienteId</asp:ListItem>
+                        <asp:ListItem>Modo</asp:ListItem>
+                        <asp:ListItem>Total</asp:ListItem>
+                        <asp:ListItem>Balance</asp:ListItem>
 
                     </asp:DropDownList>
                 </div>

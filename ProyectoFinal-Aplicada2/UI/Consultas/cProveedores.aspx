@@ -34,6 +34,8 @@
                     <asp:DropDownList ID="FiltroDropDown" runat="server" CssClass="form-control input-sm">
                         <asp:ListItem>Todo</asp:ListItem>
                         <asp:ListItem>ID</asp:ListItem>
+                        <asp:ListItem>Nombre</asp:ListItem>
+                        <asp:ListItem>Telefono</asp:ListItem>
 
                     </asp:DropDownList>
                 </div>

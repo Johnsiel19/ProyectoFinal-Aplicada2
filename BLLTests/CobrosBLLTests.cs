@@ -39,7 +39,7 @@ namespace BLL.Tests
 
                 Cobros ve = new Cobros()
                 {
-                    CobroId = 2,
+                    CobroId = 1,
                     VentaId = 2,
                     ClienteId = 1,
                     UsuarioId = 1,
@@ -56,7 +56,7 @@ namespace BLL.Tests
             {
 
 
-                Assert.IsTrue(CobrosBLL.Eliminar(2));
+                Assert.IsTrue(CobrosBLL.Eliminar(1));
             }
         }
     }

@@ -49,6 +49,28 @@ namespace ProyectoFinal_Aplicada2.UI.Consultas
                 case 1:
                     filtros = c => c.ProductoId == criterio;
                     break; //ID
+          
+
+                case 2:
+                    filtros = c => c.Descripcion.Contains(CriterioTextBox.Text);
+                    break; //Descripcion
+                case 3:
+                    filtros = c => c.ProveedorId == criterio;
+                    break; //Balance
+                case 4:
+                    filtros = c => c.Existencia == criterio;
+                    break; //Balance
+                case 5:
+                    filtros = c => c.Costo == criterio;
+                    break; //Balance
+                case 6:
+                    filtros = c => c.Precio == criterio;
+                    break; //Balance
+                case 7:
+                    filtros = c => c.ProductoItbis == criterio;
+                    break; //Balance
+
+
 
             }
             if (FechaCheckBox1.Checked == true)

@@ -45,6 +45,18 @@ namespace ProyectoFinal_Aplicada2.UI.Consultas
                 case 1:
                     filtros = c => c.UsuarioId == criterio;
                     break; //ID
+                case 3:
+                    filtros = c => c.Nombre.Contains(CriterioTextBox.Text);
+                    break;
+                case 4:
+                    filtros = c => c.Email.Contains(CriterioTextBox.Text);
+                    break;
+                case 5:
+                    filtros = c => c.NivelUsuario.Contains(CriterioTextBox.Text);
+                    break;
+                case 6:
+                    filtros = c => c.Usuario.Contains(CriterioTextBox.Text);
+                    break;
 
             }
             if (FechaCheckBox1.Checked == true)

@@ -22,10 +22,8 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
             if (!Page.IsPostBack)
             {
                 Limpiar();
-                VentaIdTextBox.Text = "0";
-              
+                      
                 ViewState["Ventas"] = new Ventas();
-
                 BindGrid();
 
             }
@@ -77,7 +75,6 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
             venta.ClienteId = Convert.ToInt32( ClienteIdDropDown.SelectedValue);
             venta.Fecha = DateTime.Now;
             venta.Modo = ModoDropDownList.Text;
-           
             venta.SubTotal = Convert.ToDecimal(SubTotalTextBox.Text);
             venta.Total = Convert.ToDecimal(TotalTextBox.Text);
             venta.Itbis = Convert.ToDecimal(ItbisTextBox.Text);
@@ -163,11 +160,14 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
         {
             Ventas  ventas;
             bool paso = false;
+            RepositorioBase<Ventas> db= new RepositorioBase<Ventas>();
             if (Validar())
             {
                 Utilitarios.Utils.ShowToastr(this.Page, "El Campo Nombre no puede estar vacio", "Error", "error");
                 return;
             }
+            ventas = db.Buscar(Convert.ToInt32(VentaIdTextBox.Text));
+       
 
 
             ventas = LlenaClase();
@@ -233,6 +233,96 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
 
         }
 
+
+        public bool ValidarGrid()
+        {
+            RepositorioBase<Productos> db = new RepositorioBase<Productos>();
+            Productos producto = new Productos();
+            int id = 0;
+            int.TryParse(ProductoDropDown.SelectedValue, out id);
+
+
+
+            if (producto != null)
+            {
+
+                producto = db.Buscar(id);
+
+            }
+     
+
+            bool paso = false;
+
+            if (ProductoDropDown.Text == "")
+            {
+                Utilitarios.Utils.ShowToastr(this.Page, "Elija un producto", "error", "error");
+                paso = true;
+            }
+
+
+            if (Convert.ToDecimal( PrecioTextBox.Text)  < Convert.ToDecimal(producto.Costo))
+            {
+                Utilitarios.Utils.ShowToastr(this.Page, "El precio es menor al costo", "error", "error");
+                paso = true;
+
+
+            }
+
+            if (producto.Existencia - Convert.ToDecimal( CantidadTextBox.Text)< 0)
+            {
+                Utilitarios.Utils.ShowToastr(this.Page, "La exitencia del producto es insufuciente", "error", "error");
+                paso = true;
+
+
+
+            }
+            if (ExisteEnGrid() == true)
+            {
+                Utilitarios.Utils.ShowToastr(this.Page, "Ese producto ya existe en el grid", "error", "error");
+                paso = true;
+            }
+            if (Convert.ToDecimal( CantidadTextBox.Text) < 1)
+            {
+                Utilitarios.Utils.ShowToastr(this.Page, "", "error", "error");
+                paso = true;
+
+            }
+
+            return paso;
+
+
+        }
+
+
+        private bool ExisteEnGrid()
+        {
+            bool paso = false;
+            Ventas venta = new Ventas();
+            ViewState["Ventas"] = venta;
+
+
+            if (Grid.Rows.Count > 0)
+            {
+               
+
+                foreach (var item in venta.Detalle)
+                {
+                   if( item.ProductoId == Convert.ToInt32(ProductoDropDown.SelectedValue))
+                    {
+                        paso = true;
+                    }
+
+                }
+
+            }
+
+
+         
+
+
+            return paso;
+        }
+
         protected void NuevoButton_Click(object sender, EventArgs e)
         {
             Limpiar();
@@ -265,19 +355,22 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
 
         }
 
-
+        
       
         protected void AgregarButton_Click(object sender, EventArgs e)
         {
             RepositorioBase<Productos> db = new RepositorioBase<Productos>();
             Productos producto = new Productos();
+       
 
+           
             producto = db.Buscar(Convert.ToInt32(ProductoDropDown.Text));
 
             Ventas venta = new Ventas();
 
             venta = (Ventas)ViewState["Ventas"];
-            
+
+
             decimal itbis = (producto.ProductoItbis * Convert.ToDecimal( 0.01));
           
             decimal monto = Convert.ToDecimal( PrecioTextBox.Text )* Convert.ToDecimal(CantidadTextBox.Text);
@@ -305,10 +398,10 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
             {
                 Subtotal = Subtotal + item.Importe;
                 Itbis = Itbis + item.Itbis;
-                total = total + (Itbis + Subtotal);
+              
 
             }
-
+            total = total + (Itbis + Subtotal);
             TotalTextBox.Text = total.ToString();
 
             SubTotalTextBox.Text = Subtotal.ToString();

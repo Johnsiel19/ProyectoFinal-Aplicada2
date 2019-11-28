@@ -47,7 +47,22 @@ namespace ProyectoFinal_Aplicada2.UI.Consultas
                 case 1:
                     filtros = c => c.ClienteId == criterio;
                     break; //ID
-           
+                case 2:
+                    filtros = c => c.Direccion.Contains(CriterioTextBox.Text);
+                    break; //Direccion
+                    
+                case 3:
+                    filtros = c => c.Balance == criterio;
+                    break; //Balance
+
+
+                case 4:
+                    filtros = c => c.Nombre.Contains(CriterioTextBox.Text);
+                    break; //Nombre
+
+
+
+
             }
             if (FechaCheckBox1.Checked == true)
             {

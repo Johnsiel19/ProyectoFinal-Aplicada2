@@ -38,7 +38,7 @@ namespace BLL.Tests
 
             Usuarios us = new Usuarios()
             {
-                UsuarioId = 2,
+                UsuarioId = 1,
                 Nombre = "Johnsiel",
                 Email = "johnsiel1@gmail.com",
                 Usuario = "Juan123",
@@ -56,7 +56,7 @@ namespace BLL.Tests
         {
             RepositorioBase<Usuarios> db = new RepositorioBase<Usuarios>();
 
-            Assert.IsNotNull(db.Buscar(3));
+            Assert.IsNotNull(db.Buscar(1));
         }
 
         [TestMethod()]
@@ -73,7 +73,7 @@ namespace BLL.Tests
         {
             RepositorioBase<Usuarios> db = new RepositorioBase<Usuarios>();
 
-            Assert.IsTrue(db.Eliminar(3));
+            Assert.IsTrue(db.Eliminar(1));
         }
 
     }

@@ -38,7 +38,7 @@
                             <div class="col-md-5">
                                 <asp:TextBox ID="NombreTextBox" runat="server" onkeypress="return isLetterKey(event)" class="form-control input-sm" Style="font-size: small"></asp:TextBox>
                             </div>
-                            <asp:RequiredFieldValidator ID="Valida" runat="server" MaxLength="100" ErrorMessage="El campo &quot;Nombres&quot; esta vacio" ControlToValidate="NombreTextBox" ForeColor="Red" Display="Dynamic" ToolTip="Campo Descripcion es obligatorio" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ID="Valida" ValidationExpression="^[0-9]*$" runat="server" MaxLength="100" ErrorMessage="El campo &quot;Nombres&quot; esta vacio" ControlToValidate="NombreTextBox" ForeColor="Red" Display="Dynamic" ToolTip="Campo Descripcion es obligatorio" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
                         </div>
 
                         <%--Correo--%>
@@ -74,7 +74,7 @@
                             <div class="col-md-4">
                                 <asp:TextBox ID="UsuarioTextBox" runat="server"  class="form-control input-sm" Style="font-size: small"></asp:TextBox>
                             </div>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" MaxLength="100" runat="server" ErrorMessage="El campo &quot;Nombres&quot; esta vacio" ControlToValidate="UsuarioTextBox" ForeColor="Red" Display="Dynamic" ToolTip="Campo Descripcion es obligatorio" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ValidationExpression="^[0-9]*$" MaxLength="100" runat="server" ErrorMessage="El campo &quot;Nombres&quot; esta vacio" ControlToValidate="UsuarioTextBox" ForeColor="Red" Display="Dynamic" ToolTip="Campo Descripcion es obligatorio" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
                         </div>
 
 

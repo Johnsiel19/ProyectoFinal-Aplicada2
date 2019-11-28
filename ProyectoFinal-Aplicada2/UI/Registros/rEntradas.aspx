@@ -40,7 +40,7 @@
                             <div class="col-md-4">
                                 <asp:DropDownList runat="server" AutoPostBack="true" ID="ProductoIdComboBox" class="form-control input-sm" Style="font-size: small"></asp:DropDownList>
                             </div>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="El campo &quot;Nombres&quot; esta vacio" ControlToValidate="ProductoIdComboBox" ForeColor="Red" Display="Dynamic" ToolTip="Campo Proveedor es obligatorio" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="El campo &quot;Nombres&quot; esta vacio" ControlToValidate="ProductoIdComboBox"  ForeColor="Red" Display="Dynamic" ToolTip="Campo Proveedor es obligatorio" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
                         </div>
 
 

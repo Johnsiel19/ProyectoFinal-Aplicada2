@@ -103,10 +103,41 @@
     <div class="panel-body">
         <div class="form-horizontal col-md-7" role="form">
 
-            </div></div></div></div>
+         
         <%--contenedor y pie de pagina--%>
+
+        
+
+
+    <div class="form-group">
+      <label for="email">Usuario:</label>
+
+         <asp:TextBox ID="UsuarioTextBox" runat="server"  placeholder="Usuario" CssClass="form-control input-sm"></asp:TextBox>
+   
+    </div>
+    <div class="form-group">
+      <label for="pwd">Clave:</label>
       
-    </form>
+              <asp:TextBox type="password" ID="ClaveTextBox"   runat="server"  placeholder="Clave" CssClass="form-control input-sm"></asp:TextBox>
+             
+    </div>
+    <div class="form-group form-check">
+      <label class="form-check-label">
+         
+        <input class="form-check-input" type="checkbox" name="remember"> Recordar Clave
+             
+      </label>
+    </div>
+                <div class="text-center">
+                        <div class="form-group">
+                           
+                            <asp:Button ID="GuardarButton" runat="server" Text="Guardar" class="btn btn-success" ValidationGroup="Guardar" OnClick="GuardarButton_Click"  />
+                           
+                        </div>
+                    </div>
+      
+      </div></div></div></div>
+        </form>
 </body>
 </html>
 

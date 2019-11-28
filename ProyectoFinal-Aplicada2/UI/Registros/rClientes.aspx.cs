@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -99,16 +100,89 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
 
 
 
+        private Boolean ValidarEmail(String email)
+        {
+            String expresion;
+            expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            if (Regex.IsMatch(email, expresion))
+            {
+                if (Regex.Replace(email, expresion, String.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+ 
         private bool ValidarCampos()
         {
             bool paso = true;
-            if (NombreTextBox.Text == string.Empty)
+            if (string.IsNullOrWhiteSpace (NombreTextBox.Text))
             {
-                Utilitarios.Utils.ShowToastr(this.Page, "El campo descripcion no puede estar vacio", "Error", "error");
+                Utilitarios.Utils.ShowToastr(this.Page, "El campo nombre no puede estar vacio", "Error", "error");
 
                 NombreTextBox.Focus();
                 paso = false;
             }
+
+            if (CelularTextBox.Text.Length < 10)
+            {
+                Utilitarios.Utils.ShowToastr(this.Page, "Celular invalido", "Error", "error");
+                paso = false;
+
+            }
+            if (CelularTextBox.Text.Length > 11)
+            {
+                Utilitarios.Utils.ShowToastr(this.Page, "Celular invalido", "Error", "error");
+                paso = false;
+
+            }
+            if (NombreTextBox.Text == "")
+            {
+                Utilitarios.Utils.ShowToastr(this.Page, "Llene el comapo nombre", "Error", "error");
+                paso = false;
+
+            }
+            if (TelefonoTextBox.Text.Length < 10)
+            {
+                Utilitarios.Utils.ShowToastr(this.Page, "Telefono Invalido", "Error", "error");
+                paso = false;
+
+            }
+            if (TelefonoTextBox.Text.Length > 11)
+            {
+                Utilitarios.Utils.ShowToastr(this.Page, "Telefono Invalido", "Error", "error");
+                paso = false;
+
+            }
+            if (CedulaTextBox.Text.Length < 11)
+            {
+                Utilitarios.Utils.ShowToastr(this.Page, "Cedula Invalido", "Error", "error");
+                paso = false;
+
+            }
+            if (CedulaTextBox.Text.Length > 12)
+            {
+                Utilitarios.Utils.ShowToastr(this.Page, "Cedula Invalido", "Error", "error");
+                paso = false;
+
+            }
+
+            if (ValidarEmail(CorreoTextBox.Text) == false)
+            {
+                Utilitarios.Utils.ShowToastr(this.Page, "Correo Invalido", "Error", "error");
+
+                paso = false;
+            }
+
+
 
 
             return paso;
@@ -150,6 +224,12 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
             {
                 int id = Convert.ToInt32(ClienteIdTextBox.Text);
                 RepositorioBase<Clientes> repositorio = new RepositorioBase<Clientes>();
+
+                if (Convert.ToDecimal( BalanceTextBox.Text) >0)
+                {
+
+                    Utilitarios.Utils.ShowToastr(this.Page, "No se puede Eliminar Porque tiene balance Pendiente", "Error", "error");
+                }
                 if (repositorio.Eliminar(id))
                 {
 

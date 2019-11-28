@@ -46,6 +46,13 @@ namespace ProyectoFinal_Aplicada2.UI.Consultas
                 case 1:
                     filtros = c => c.EntradaId == criterio;
                     break; //ID
+                case 2:
+                    filtros = c => c.Entrada == criterio;
+                    break; //Entrada
+                case 3:
+                    filtros = c => c.ProductoId == criterio;
+                    break; //ProductoId
+
 
             }
             if (FechaCheckBox1.Checked == true)

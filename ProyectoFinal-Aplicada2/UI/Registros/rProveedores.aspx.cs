@@ -124,7 +124,13 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
         private bool ValidarCampos()
         {
             bool paso = true;
-            if (CelularTextBox.Text.Length < 11)
+            if (CelularTextBox.Text.Length < 10)
+            {
+                Utilitarios.Utils.ShowToastr(this.Page, "Celular invalido", "Error", "error");
+                paso = false;
+
+            }
+            if (CelularTextBox.Text.Length > 11)
             {
                 Utilitarios.Utils.ShowToastr(this.Page, "Celular invalido", "Error", "error");
                 paso = false;
@@ -136,13 +142,18 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
                 paso = false;
 
             }
-            if (TelefonoTextBox.Text.Length < 11)
+            if (TelefonoTextBox.Text.Length < 10)
             {
                 Utilitarios.Utils.ShowToastr(this.Page, "Telefono Invalido", "Error", "error");
                 paso = false;
 
             }
+            if (TelefonoTextBox.Text.Length > 11)
+            {
+                Utilitarios.Utils.ShowToastr(this.Page, "Telefono Invalido", "Error", "error");
+                paso = false;
 
+            }
 
             if (ValidarEmail(CorreoTextBox.Text) == false)
             {

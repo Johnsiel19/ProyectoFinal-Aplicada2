@@ -36,7 +36,7 @@ namespace BLL.Tests
 
                 Entradas ve = new Entradas()
                 {
-                    EntradaId = 2,
+                    EntradaId = 1,
                     ProductoId = 1,
                     UsuarioId = 3,
                     Entrada = 9,

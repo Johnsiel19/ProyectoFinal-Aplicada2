@@ -38,7 +38,7 @@
                 <div class="col-md-6">
                     <asp:TextBox ID="DescripcionTextBox" runat="server"  class="form-control input-sm" Style="font-size: small"></asp:TextBox>
                 </div>
-                <asp:RequiredFieldValidator ID="Valida" MaxLength="100" runat="server" ErrorMessage="El campo &quot;Nombres&quot; esta vacio" ControlToValidate="DescripcionTextBox" ForeColor="Red" Display="Dynamic" ToolTip="Campo Descripcion es obligatorio" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="Valida" MaxLength="100" ValidationExpression="^[0-9]*$" runat="server" ErrorMessage="El campo &quot;Nombres&quot; esta vacio" ControlToValidate="DescripcionTextBox" ForeColor="Red" Display="Dynamic" ToolTip="Campo Descripcion es obligatorio" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
             </div>
 
         
@@ -65,7 +65,7 @@
              <div class="form-group">
                 <label for="Costolabel" class="col-md-3 control-label input-sm" style="font-size: small">Costo</label>
                 <div class="col-md-2">
-                    <asp:TextBox  class="form-control" ID="CostoTextBox" Text="0" runat="server" TextMode="Number"></asp:TextBox>
+                    <asp:TextBox  class="form-control" ID="CostoTextBox" Text="0" runat="server" TextMode="number"  ></asp:TextBox>
                 </div>
                
             </div>

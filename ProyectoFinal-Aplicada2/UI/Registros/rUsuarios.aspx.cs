@@ -48,7 +48,7 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
             UsuarioIdTextBox.Text = string.Empty;
             CorreoTextBox.Text = string.Empty;
             ConfirmarClaveTextBox.Text = string.Empty;
-        
+            UsuarioTextBox.Text = string.Empty;
             ClaveTextBox.Text = string.Empty;
             fechaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
          

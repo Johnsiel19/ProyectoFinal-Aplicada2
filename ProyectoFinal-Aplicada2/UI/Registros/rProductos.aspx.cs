@@ -62,9 +62,9 @@ namespace ProyectoFinal_Aplicada2.UI.Registros
         {
             ProductoIdTextBox.Text = "0";
             DescripcionTextBox.Text = string.Empty;
-            PrecioTextBox.Text = 0.ToString();
-            CostoTextBox.Text = string.Empty;
-            ItbisTextBox.Text = string.Empty;
+            PrecioTextBox.Text = "0.00";
+            CostoTextBox.Text = "0.00";
+            ItbisTextBox.Text = "0.00";
             ExistenciaTextBox.Text =" 0.00";
             ProveedorIdTextbox.Text = null;
             fechaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
